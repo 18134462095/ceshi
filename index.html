@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script>
+      const u = navigator.userAgent;
+      const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+      const Adr10 = !!u.match(/Android 1\d/);
+      function getdeviceType () {
+        if (isiOS) {
+          return 'IDFA'
+        } else {
+          if (Adr10) {
+            return 'OAID'
+          } else {
+            return 'IMEI'
+          }
+        }
+      }
+      var deviceType = getdeviceType()
+    </script>
+    <script type="text/javascript" id="getIP" src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="./src/utils/canvas2image.js"></script>
+    
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=bGy4UYknt288Sa6Kd57LoXlNPa8IihGV&services=&t=20200824135534"></script>
+    <!-- 高德 -->
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=36e3eb610e5955bf6cc2d57209b06571&plugin=AMap.convertFrom,AMap.Geolocation,AMap.Autocomplete,AMap.Walking,AMap.PlaceSearch,AMap.PolyEditor,AMap.CircleEditor,AMap.Transfer,AMap.Driving,AMap.CitySearch,AMap.Heatmap,AMap.Size,AMap.Geocoder,AMap.Polyline,AMap.ToolBar,AMap.GraspRoad" type="text/javascript"></script>
+    <link rel="stylesheet" href="./static/css/index.css">
+    <title>mallDistribution</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+   
+  </body>
+</html>
